@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BankCardTokenization.Server", "BankCardTokenization.Server\BankCardTokenization.Server.csproj", "{E2223D45-7CBD-46B1-A89A-9BC6B1F32CCC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BankCardTokenization.Client", "BankCardTokenization.Client\BankCardTokenization.Client.csproj", "{7EBF08CA-159D-454B-948D-6E8986706E97}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BankCardTokenization.Common", "BankCardTokenization.Common\BankCardTokenization.Common.csproj", "{7336BB65-B670-44F3-9F69-ADF6A68D3237}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E2223D45-7CBD-46B1-A89A-9BC6B1F32CCC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E2223D45-7CBD-46B1-A89A-9BC6B1F32CCC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E2223D45-7CBD-46B1-A89A-9BC6B1F32CCC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E2223D45-7CBD-46B1-A89A-9BC6B1F32CCC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7EBF08CA-159D-454B-948D-6E8986706E97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7EBF08CA-159D-454B-948D-6E8986706E97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7EBF08CA-159D-454B-948D-6E8986706E97}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7EBF08CA-159D-454B-948D-6E8986706E97}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7336BB65-B670-44F3-9F69-ADF6A68D3237}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7336BB65-B670-44F3-9F69-ADF6A68D3237}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7336BB65-B670-44F3-9F69-ADF6A68D3237}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7336BB65-B670-44F3-9F69-ADF6A68D3237}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
