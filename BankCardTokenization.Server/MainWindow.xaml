@@ -5,8 +5,29 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BankCardTokenization.Server"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        
+        Title="Bank Card Tokenization Server" Height="400" Width="600" ResizeMode="CanMinimize">
+    <Window.Background>
+        <RadialGradientBrush>
+            <GradientStop Color="#FFA4C900" Offset="0.846"/>
+            <GradientStop Color="#FF5CB603" Offset="0.943"/>
+        </RadialGradientBrush>
+    </Window.Background>
+    <Grid Margin="0,0,0,1">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock x:Name="txbMessages" Margin="10,7,0,0" Foreground="White">Messages:</TextBlock>
+        <ScrollViewer Grid.Row="1" Grid.ColumnSpan="2" Margin="10">
+            <TextBox  Grid.Row="1" Grid.ColumnSpan="2" x:Name="txtMessages" IsReadOnly="True" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Height="287" Width="580" TextChanged="txtMessages_TextChanged"></TextBox>
+        </ScrollViewer>
+        <Button Grid.Row="2" x:Name="btnExportByToken" Margin="11,0,40,10" Click="btnExportByToken_Click" Opacity="0.8">Export sorted by token</Button>
+        <Button Grid.Row="2" Grid.Column="1" x:Name="btnExportByCardNumber" Margin="40,0,11,10" Click="btnExportByCardNumber_Click" Opacity="0.8">Export sorted by card number</Button>
     </Grid>
 </Window>

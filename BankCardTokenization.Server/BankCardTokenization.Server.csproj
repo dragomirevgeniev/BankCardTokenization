@@ -37,6 +37,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -55,6 +56,13 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="BankCardManager.cs" />
+    <Compile Include="ClientProcessor.cs" />
+    <Compile Include="Objects\BankCard.cs" />
+    <Compile Include="Objects\Token.cs" />
+    <Compile Include="Objects\User.cs" />
+    <Compile Include="Server.cs" />
+    <Compile Include="XMLProcessor.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -94,6 +102,13 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\BankCardTokenization.Common\BankCardTokenization.Common.csproj">
+      <Project>{7336BB65-B670-44F3-9F69-ADF6A68D3237}</Project>
+      <Name>BankCardTokenization.Common</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

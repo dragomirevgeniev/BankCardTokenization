@@ -1,12 +1,24 @@
-﻿<Window x:Class="BankCardTokenization.Client.MainWindow"
+﻿<Window
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BankCardTokenization.Client"
+        xmlns:UserControls="clr-namespace:BankCardTokenization.Client.UserControls" x:Class="BankCardTokenization.Client.MainWindow"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        
+        Title="Bank Card Tokenization Client" Height="300" Width="350" ResizeMode="CanMinimize" Background="#FFDEEC50">
+    <Grid x:Name="mainGrid">
+        <TabControl x:Name="tabControl" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <TabItem x:Name="loginTab" Header="Login">
+                <Grid x:Name="loginGrid" Background="#FFE5E5E5">
+                    <UserControls:LoginUserControl x:Name="ucLoginUser" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="registerTab" Header="Register">
+                <Grid x:Name="registerGrid" Background="#FFE5E5E5">
+                    <UserControls:RegisterUserControl x:Name="ucRegisterUser" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+                </Grid>
+            </TabItem>
+        </TabControl>
     </Grid>
 </Window>
