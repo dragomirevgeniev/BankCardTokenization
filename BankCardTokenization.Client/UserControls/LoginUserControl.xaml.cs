@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
-
+using System.Windows.Input;
 
 namespace BankCardTokenization.Client.UserControls
 {
@@ -18,6 +18,17 @@ namespace BankCardTokenization.Client.UserControls
             if (ValidateUserInput() && ProcessLogin != null)
             {
                 ProcessLogin(txtUsername.Text, txtPassword.Password);
+            }
+        }
+
+        private void KeyDownHandler(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                if (ValidateUserInput() && ProcessLogin != null)
+                {
+                    ProcessLogin(txtUsername.Text, txtPassword.Password);
+                }
             }
         }
 

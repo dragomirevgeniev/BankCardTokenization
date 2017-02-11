@@ -25,32 +25,42 @@ namespace BankCardTokenization.Server
         {
             int[] token = new int[cardNumber.Length - 4];
             int sum = 0;
+
+            for (int i = 12; i < 16; i++)
+            {
+                sum += cardNumber[i];
+            }
+
             // generating the first number of the token according to the rule
             do
             {
-                token[0] = GenerateRandomNumber(rand);
+                token[0] = GenerateRandomDigit(rand);
             }
-            while (!IsFirstDigitCorrect(token[0]));
+            while (IsFirstDigitCorrect(token[0]));
+
+            sum += token[0];
 
             // generating all other numbers of the token
             for (int i = 1; i < token.Length; i++)
             {
-                token[i] = GenerateRandomNumber(rand);
+                do
+                {
+                    token[i] = GenerateRandomDigit(rand);
+                }
+                while (token[i] == cardNumber[i] - '0');
+
                 sum += token[i];
             }
 
             while (sum % 10 == 0)
             {
-                for (int i = 0; i < token.Length; i++)
-                {
-                    if (token[i] == cardNumber[i])
-                    {
-                        token[i] = GenerateRandomNumber(rand);
-                    }
-                }
-
                 sum -= token[token.Length - 1];
-                token[token.Length - 1] = GenerateRandomNumber(rand);
+                do
+                {
+                    token[token.Length - 1] = GenerateRandomDigit(rand);
+                }
+                while (token[token.Length - 1] == cardNumber[token.Length - 1] - '0');
+                
                 sum += token[token.Length - 1];
             }
 
@@ -63,7 +73,7 @@ namespace BankCardTokenization.Server
             return new string(result);
         }
 
-        private static int GenerateRandomNumber(Random rand)
+        private static int GenerateRandomDigit(Random rand)
         {
             return rand.Next(0, 10);
         }
@@ -72,10 +82,10 @@ namespace BankCardTokenization.Server
         {
             return cardNumber.Length == Constants.VALID_BANK_CARD_NUMBER_LENGTH &&
                 IsFirstDigitCorrect(Convert.ToInt32(cardNumber[0].ToString())) &&
-                TestLunh(cardNumber);
+                TestLuhn(cardNumber);
         }
 
-        private static bool TestLunh(string cardNumber)
+        private static bool TestLuhn(string cardNumber)
         {
             int[] digits = cardNumber.Select(e => int.Parse(e.ToString())).ToArray();
 

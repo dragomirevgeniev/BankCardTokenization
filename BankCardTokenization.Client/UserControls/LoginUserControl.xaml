@@ -23,8 +23,8 @@
         <TextBlock x:Name="lblUsername" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" Margin="8">Username:</TextBlock>
         <TextBlock x:Name="lblPassword" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2" Margin="8">Password:</TextBlock>
 
-        <TextBox x:Name="txtUsername" Grid.Row="1" Grid.Column="1" Margin="8" MaxHeight="22"></TextBox>
-        <PasswordBox x:Name="txtPassword" Grid.Row="2" Grid.Column="1" Margin="8" MaxHeight="22" PasswordChar="*"></PasswordBox>
+        <TextBox x:Name="txtUsername" KeyDown="KeyDownHandler" Grid.Row="1" Grid.Column="1" Margin="8" MaxHeight="22"></TextBox>
+        <PasswordBox x:Name="txtPassword" KeyDown="KeyDownHandler" Grid.Row="2" Grid.Column="1" Margin="8" MaxHeight="22" PasswordChar="*"></PasswordBox>
 
         <Button x:Name="btnLogin" Grid.Column="1" Grid.Row="3" Margin="8" MaxHeight="25" Click="btnLogin_Click">Login</Button>
     </Grid>
