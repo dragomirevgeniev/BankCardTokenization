@@ -32,7 +32,7 @@ namespace BankCardTokenization.Client.UserControls
         {
 
             // Username validation
-            // Username must be between 6 and 20 characters
+            // Username must be between 6 and 30 characters
             // Username can contain letters and numbers, dots and underscores
             // Dot and underscore cannot be next to each other
             // Username must not start or end with a dot or underscore
