@@ -3,6 +3,7 @@ using BankCardTokenization.Common;
 using System;
 using System.Windows;
 using System.ComponentModel;
+using System.Windows.Controls;
 
 namespace BankCardTokenization.Client
 {
@@ -61,6 +62,25 @@ namespace BankCardTokenization.Client
                 mainGrid.Children.Remove(tabControl);
                 mainGrid.Children.Add(ucRequestRegisterToken);
                 ucRequestRegisterToken.lblUsername.Text = username;
+                switch (Client.CurrentRights)
+                {
+                    case UserRights.None:
+                        ucRequestRegisterToken.btnGenerateToken.Visibility = Visibility.Hidden;
+                        ucRequestRegisterToken.btnGetCardNumber.Visibility = Visibility.Hidden;
+                        break;
+                    case UserRights.GenerateToken:
+                        ucRequestRegisterToken.btnGetCardNumber.Visibility = Visibility.Hidden;
+                        Grid.SetColumnSpan(ucRequestRegisterToken.btnGenerateToken, 2);
+                        break;
+                    case UserRights.RequestCard:
+                        ucRequestRegisterToken.btnGenerateToken.Visibility = Visibility.Hidden;
+                        Grid.SetColumnSpan(ucRequestRegisterToken.btnGetCardNumber, 2);
+                        break;
+                    case UserRights.All:
+                        break;
+                    default:
+                        break;
+                }
             }
         }
 

@@ -20,6 +20,8 @@ namespace BankCardTokenization.Client
 
         private BinaryWriter writer { get; set; }          // the binary writer of the connection
 
+        public UserRights CurrentRights { get; set; }      // the current user rights
+
         public Client(Action<string> processMessage, Action<string> processError)
         {
             ProcessMessage = processMessage;
@@ -115,6 +117,10 @@ namespace BankCardTokenization.Client
 
             string response = reader.ReadString();
             ProcessMessage(response);
+            if (response.Equals(string.Format(Constants.WELLCOME_IN_THE_SYSTEM, username)))
+            {
+                CurrentRights = (UserRights)reader.ReadInt32();
+            }
 
             return response.Equals(string.Format(Constants.WELLCOME_IN_THE_SYSTEM, username));
         }

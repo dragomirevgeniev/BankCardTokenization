@@ -117,6 +117,7 @@ namespace BankCardTokenization.Server
                 {
                     ProcessMessage(string.Format(Constants.USER_LOGGED_IN, username));
                     writer.Write(string.Format(Constants.WELLCOME_IN_THE_SYSTEM, username));
+                    writer.Write((int)user.Rights);
                     return user;
                 }
                 else
